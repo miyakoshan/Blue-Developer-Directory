@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Cache Explanation</title>
+
+    <style>
+        h1{
+            color: blueviolet;
+            font-size: xx-large;
+        }
+    
+        h3{
+            color: cadetblue;
+        }
+    
+        b{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>What Is Application Cache</h1>
+
+    <ol>
+        <li>Using HTML5 Apache, we can ,ake web application work offline without an Internet connection. All browsers aside from IE can use AppCache <span style="color: gray;">at this time</span></li>
+        <li>Advantage of Application Cache</li>
+        <ul>
+            <li>Browser Web Pages Offline</li>
+            <li>Pages Load Faster</li>
+            <li>Less Load For Server</li>
+        </ul>
+    </ol>
+
+    <h1>Cache Manifest File</h1>
+    <ul>
+        <li>The cache manifest file is a simple text file that lists the resourced the browser should cache for offline access.</li>
+    </ul>
+
+    <h3>To Reference :</h3>
+    <ul>
+        <li>Include the manifest attribute on the document's html tag :</li>
+        <li><'html manifest="example.appcache"><br>
+        ........<br>
+        <'/html></li>
+        <li>Should be on all pages you want to cache</li>
+    </ul>
+
+    <h1>Manifest Structure Example</h1>
+    <h3>This is very simple and minimal example</h3>
+    <ol>
+        <li>CACHE MANIFEST</li>
+        <li>index.html</li>
+        <li>styless.css</li>
+        <li>images/logo.png</li>
+        <li>script/myscript.js</li>
+    </ol>
+
+    <ul>
+        <li>Four files on this pages will be cached</li>
+        <li>If the manifest file or a resource specified in it fails to download, the entire cache process fails.</li>
+    </ul>
+
+    <h1>Serving The Manifest</h1>
+    <ol>
+        <li>This file needs to be served with a content-type header of <span style="font-weight: bold;">text/cache-manifest;</span></li>
+        <li>it's really simple to do with an .htaccess file</li>
+        <li>This will serve all files with an extention of "manifest" with the appropriate content-type header.</li>
+    </ol>
+
+    <h1>Cache Updating</h1>
+    <h3>The application that was cached will remain unless...</h3>
+    <ol>
+        <li>The user clears it out</li>
+        <li>The manifest has been modified</li>
+        <li>The cache is updated</li>
+    </ol>
+
+</body>
+</html>
